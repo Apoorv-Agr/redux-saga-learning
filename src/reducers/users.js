@@ -2,6 +2,7 @@ import { Types } from "../constants";
 
 const INITIAL_STATE = {
   items: [],
+  ShowLoader: true,
 };
 
 export default function users(state = INITIAL_STATE, action) {
@@ -10,6 +11,7 @@ export default function users(state = INITIAL_STATE, action) {
       return {
         ...INITIAL_STATE,
         items: action.payLoad.items,
+        ShowLoader: false,
       };
     default:
       return INITIAL_STATE;

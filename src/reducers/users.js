@@ -14,6 +14,6 @@ export default function users(state = INITIAL_STATE, action) {
         ShowLoader: false,
       };
     default:
-      return INITIAL_STATE;
+      return { ...INITIAL_STATE, ShowLoader: true };
   }
 }

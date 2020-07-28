@@ -9,21 +9,17 @@ import UsersList from "../components/UsersList";
 import NewUsersForm from "../components/NewUsersForm";
 
 class App extends React.Component {
-  // props.getUserRequest();
-  // console.log('props : ', props)
-  constructor(props) {
+  /* constructor(props) {
     super(props);
-  }
+  } */
   componentDidMount() {
     this.props.getUserRequest();
   }
 
   handleSubmit = ({ firstName, lastName }) => {
-    console.log(firstName, lastName);
     this.props.createNewUserRequest({ firstName, lastName });
   };
   deleteUser = (userID) => {
-    console.log("userID : ", userID);
     this.props.deleteUserRequest(userID);
   };
 
@@ -45,6 +41,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     userLists: state.users,
+    ShowLoader: state.users.ShowLoader,
   };
 };
 export default connect(mapStateToProps, {

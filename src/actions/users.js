@@ -14,3 +14,22 @@ export const getUserSuccess = ({ items }) => {
     },
   };
 };
+
+export const createNewUserRequest = ({ firstName, lastName }) => {
+  return {
+    type: Types.CREATE_NEW_USERS,
+    payLoad: {
+      firstName,
+      lastName,
+    },
+  };
+};
+
+export const deleteUserRequest = (userId) => {
+  return {
+    type: Types.DELETE_USER,
+    payLoad: {
+      userId: userId,
+    },
+  };
+};

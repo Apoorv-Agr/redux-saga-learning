@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Button } from "antd";
 
-const UsersList = ({ users, ShowLoader }) => {
+const UsersList = ({ users, ShowLoader, deleteUser }) => {
   let data = users;
   data.sort((a, b) => {
     if (a.firstName > b.firstName) {
@@ -28,7 +28,14 @@ const UsersList = ({ users, ShowLoader }) => {
           </div>
           {/* <List.Item.Meta title={item.firstName} description="" /> */}
           <div>
-            <Button danger>Delete</Button>
+            <Button
+              danger
+              onClick={() => {
+                deleteUser(item.id);
+              }}
+            >
+              Delete
+            </Button>
           </div>
         </List.Item>
       )}

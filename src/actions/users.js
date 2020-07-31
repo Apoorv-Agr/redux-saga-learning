@@ -33,3 +33,12 @@ export const deleteUserRequest = (userId) => {
     },
   };
 };
+
+export const userError = ({ error }) => {
+  return {
+    type: Types.USER_ERROR,
+    payLoad: {
+      error,
+    },
+  };
+};
